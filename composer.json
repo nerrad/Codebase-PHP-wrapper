@@ -1,0 +1,19 @@
+{
+	"name": "nerrad/Codebase-PHP-Wrapper",
+	"description":"Fork of PHP Wrapper made for Codebase https://github.com/peterjaap/Codebase-PHP-wrapper ",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/nerrad/Codebase-PHP-wrapper"
+		}
+	],
+	"keywords": ["codebase", "api"],
+	"type": "library",
+	"authors": [
+		{
+			"name": "Darren Ethier",
+			"homepage": "http://roughsmootheng.in",
+			"email": "darren@roughsmootheng.in"
+		}
+	]
+}
