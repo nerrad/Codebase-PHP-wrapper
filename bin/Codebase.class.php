@@ -25,6 +25,21 @@ class Codebase {
         return $xml['project'];
     }
 
+    public function users( $project, $user_name = '' ) {
+        //get all users assigned to given project
+        $xml = $this->object2array( simplexml_load_string( $this->get($project.'/assignments' ), 'SimpleXMLElement', LIBXML_NOCDATA) );
+        $users = $xml['user'];
+        if ( !empty( $user_name ) ) {
+            //loop through the returned data to find the user matching the given username
+            foreach ( $users as $ref => $user ) {
+                if ( isset( $user['username'] ) && $user['username'] == $user_name ) {
+                    return $users[$ref];
+                }
+            }
+        }
+        return $users;
+    }
+
     public function tickets($permalink, $query = 'sort:status' ) {
         $url = '/'.$permalink.'/tickets?query=' . $query;
         $xml = $this->object2array(simplexml_load_string($this->get($url),'SimpleXMLElement',LIBXML_NOCDATA));
