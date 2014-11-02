@@ -25,9 +25,9 @@ class Codebase {
         return $xml['project'];
     }
 
-    public function users( $project, $user_name = '' ) {
-        //get all users assigned to given project
-        $xml = $this->object2array( simplexml_load_string( $this->get($project.'/assignments' ), 'SimpleXMLElement', LIBXML_NOCDATA) );
+    public function users( $user_name = '' ) {
+        //get all users in account
+        $xml = $this->object2array( simplexml_load_string( $this->get( '/users' ), 'SimpleXMLElement', LIBXML_NOCDATA) );
         $users = $xml['user'];
         if ( !empty( $user_name ) ) {
             //loop through the returned data to find the user matching the given username
