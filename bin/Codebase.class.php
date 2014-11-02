@@ -34,7 +34,7 @@ class Codebase {
     public function ticket( $project, $ticket_id ) {
         $url = '/'.$project.'/tickets/'.$ticket_id;
          $xml = $this->object2array(simplexml_load_string($this->get($url),'SimpleXMLElement',LIBXML_NOCDATA));
-         return $xml['ticket'];
+         return $xml;
     }
 
     public function project($permalink) {
