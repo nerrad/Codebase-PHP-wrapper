@@ -25,8 +25,8 @@ class Codebase {
         return $xml['project'];
     }
 
-    public function tickets($permalink) {
-    	$url = '/'.$permalink.'/tickets?query=sort:status';
+    public function tickets($permalink, $query = 'sort:status' ) {
+        $url = '/'.$permalink.'/tickets?query=' . $query;
         $xml = $this->object2array(simplexml_load_string($this->get($url),'SimpleXMLElement',LIBXML_NOCDATA));
         return $xml['ticket'];
     }
